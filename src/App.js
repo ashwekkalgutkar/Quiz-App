@@ -20,7 +20,7 @@ function App() {
             <Route path="/questions">
               <Questions />
             </Route>
-            <Route path="/leaderboard">
+            <Route path="/score">
               <FinalScreen />
             </Route>
           </Switch>
