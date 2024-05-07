@@ -1,26 +1,32 @@
-
-import Navbar from './Components/Navbar';
-import { Box,ChakraProvider } from '@chakra-ui/react';
-import { Route,Routes } from 'react-router-dom';
-import Home from './Pages/Home';
-import Leaderboard from './Pages/Leaderboard';
-import QuizPage from './Pages/QuizPage';
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Settings from "./pages/Settings";
+import Questions from "./pages/Questions";
+import FinalScreen from "./pages/FinalScreen";
+import { Container, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 function App() {
   return (
-    <div className="App">
-    <ChakraProvider>
-      <Box>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/leaderboard' element={<Leaderboard />}/>
-          <Route path='/quizpage' element={<QuizPage />}/>
-        </Routes>
-      </Box>
-    </ChakraProvider>
-    </div>
+    <Router>
+      <Container maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+          <Switch>
+            <Route path="/" exact>
+              <Typography variant="h2" fontWeight="bold">
+                Set up your Quiz
+              </Typography>
+              <Settings />
+            </Route>
+            <Route path="/questions">
+              <Questions />
+            </Route>
+            <Route path="/leaderboard">
+              <FinalScreen />
+            </Route>
+          </Switch>
+        </Box>
+      </Container>
+    </Router>
   );
 }
 
