@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Table, Thead, Tbody, Tr, Th, Td, Heading } from '@chakra-ui/react';
 
-const Dashboard = () => {
+const Leaderboard = () => {
   const [leaderboardData, setLeaderboardData] = useState([]);
 
   const getData = async () => {
@@ -44,4 +44,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Leaderboard;
